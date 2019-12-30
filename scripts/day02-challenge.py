@@ -20,7 +20,7 @@ for line in loglines:
         date_str=line.split(" ")[1]
         new_list.append((datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S")))
 
-print(new_list[1] - new_list[0])
+print("Version 01: basic - ",new_list[1] - new_list[0])
 print("")
 
 ###################
@@ -28,20 +28,20 @@ print("")
 ###################
 
 
-#def convert_to_datetime_01(line):
-#    datestring=line.split()[1]
-#    return datetime.strptime(datestring, "%Y-%m-%dT%H:%M:%S")
+def convert_to_datetime_01(line):
+    datestring=line.split()[1]
+    return datetime.strptime(datestring, "%Y-%m-%dT%H:%M:%S")
 
-#def time_between_shutdowns_01(loglines):
-#    newer_list= []
-#    for line in loglines:
-#        if SHUTDOWN_EVENT in line:
-#            newer_list.append(convert_to_datetime_01(line))
-#    return max(newer_list) - min(newer_list)
+def time_between_shutdowns_01(loglines):
+    newer_list= []
+    for line in loglines:
+        if SHUTDOWN_EVENT in line:
+            newer_list.append(convert_to_datetime_01(line))
+    return max(newer_list) - min(newer_list)
 
 
-#print(time_between_shutdowns_01(loglines))
-#print("")
+print("Version 02: Using functions - ",time_between_shutdowns_01(loglines))
+print("")
 
 
 
@@ -51,22 +51,22 @@ print("")
 ############################################
 
 def convert_to_time(lines):
-    timestamp = line.split()[1]
+    timestamp = lines.split()[1]
     date_str = '%Y-%m-%dT%H:%M:%S'
-    print("timestamp is ", timestamp)
+    #print("timestamp is ", timestamp) #Test for output
     return datetime.strptime(timestamp, date_str)
 
 
 
 def time_between_shutdowns(loglines):
     shutdown_entries=[line for line in loglines if SHUTDOWN_EVENT in line]
-    print(shutdown_entries)
+    #print(shutdown_entries) #Test for output
     shutdown_times=[convert_to_time(event) for event in shutdown_entries]
-    print(shutdown_times)
+    #print(shutdown_times) #Test for output
     return max(shutdown_times) - min(shutdown_times)
 
 
-print(time_between_shutdowns(loglines))
+print("Version 03: PyBites solution - ",time_between_shutdowns(loglines))
 
 
 
