@@ -108,7 +108,12 @@ for x,y in challenges_done:
     print(x, 'is ', y)
 
 # Goal is to convert into a dictionary.
-# a regular dictionary will fail.
+# a regular dictionary will fai
+
+
+
+
+
 # uncomment to demonstrate failure.
 
 #challenges = {}
