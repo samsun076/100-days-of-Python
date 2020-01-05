@@ -2,7 +2,7 @@ from collections import defaultdict, namedtuple, Counter, deque
 import csv
 
 
-file='collections_directors.csv'
+file= 'collections_directors.csv'
 Movie = namedtuple('Movie', 'title year score')
 
 directors = defaultdict(list)

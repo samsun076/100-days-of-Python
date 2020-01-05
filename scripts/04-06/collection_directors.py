@@ -8,7 +8,7 @@ import random
 # https://github.com/talkpython/100daysofcode-with-python-course/blob/master/days/04-06-collections/collections.ipynb
 # next steps are to add a function to the below code.
 
-file='collections_directors.csv'
+file= 'collections_directors.csv'
 
 #Define a named tuple
 Movie = namedtuple('Movie', 'title year score')
