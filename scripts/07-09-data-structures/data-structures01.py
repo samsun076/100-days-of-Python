@@ -72,3 +72,9 @@ print("\tList Comprehension Result:",[car for car_list in cars.values() for car 
 
 
 
+
+print("""\n04: return a copy of the cars dict with the car models (values) sorted alphabetically""")
+for key, value in sorted(cars.items()):
+    print("\t",key, sorted(value))
+
+
