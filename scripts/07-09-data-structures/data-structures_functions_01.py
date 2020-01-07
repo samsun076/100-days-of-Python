@@ -36,14 +36,21 @@ def get_all_matching_models(cars=cars, grep='trail'):
     """return a list of all models containing the case insensitive
        'grep' string which defaults to 'trail' for this exercise,
        sort the resulting sequence alphabetically"""
-    
+    search_term=grep
+    models=sorted([car for car_list in cars.values() for car in car_list if search_term.lower() in car.lower()])
+    return models
 
 
 def sort_car_models(cars=cars):
     """return a copy of the cars dict with the car models (values)
        sorted alphabetically"""
-    pass
+    new_sorted_dict={}
+    for key, value in cars.items():
+        new_sorted_dict[key]=sorted(value)
+    return new_sorted_dict
 
 
 print(get_all_jeeps(cars))
 print(get_first_model_each_manufacturer())
+print(get_all_matching_models(grep='CO'))
+print(sort_car_models())

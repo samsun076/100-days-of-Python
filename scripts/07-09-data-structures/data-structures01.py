@@ -56,18 +56,18 @@ print("\tList Comprehension method: ",[model[0] for model in cars.values()])
 print("""\n03: return a list of all models containing the case insensitive
 'grep' string which defaults to 'trail' for this exercise""")
 #print(cars.values())
-search_term="trail"
+search_term="CO"
 result=[]
 for car_list in cars.values():
     for car in car_list:
-        if search_term in car.lower():
+        if search_term.lower() in car.lower():
             #print(car)
             result.append(car)
         #else:
             #print(search_term, "not in ", car)
 
-print("\tFor Loop Result:",result)
-print("\tList Comprehension Result:",[car for car_list in cars.values() for car in car_list if search_term in car.lower()])
+print("\tFor Loop Result:",sorted(result))
+print("\tList Comprehension Result:",sorted([car for car_list in cars.values() for car in car_list if search_term.lower() in car.lower()]))
 
 
 
