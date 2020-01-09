@@ -134,3 +134,4 @@ def combine_state_names_and_abbreviations(us_state_abbrev=us_state_abbrev,
     list2 = sorted(states)[-10:]
     return list1 + list2
 print(combine_state_names_and_abbreviations())
+print("hi")
