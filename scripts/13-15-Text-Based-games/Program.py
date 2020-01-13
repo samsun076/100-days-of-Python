@@ -49,3 +49,6 @@ def game_loop():
             print('You  have defeated all the creatures, well done!')
             break
     Print("Good Bye")
+
+if __name__ == 'main':
+    main()
