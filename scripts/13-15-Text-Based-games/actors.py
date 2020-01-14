@@ -1,15 +1,15 @@
 import random
 
-#creating blueprints or classes for creature
 
-class Creature(self, name, level):
-    def __init__(self):
+class Creature:
+    def __init__(self, name, level):
         self.name = name
         self.level = level
 
     def defensive_roll(self):
-        roll = random.int(1, 12)
+        roll = random.randint(1, 12)
         return roll * self.level
+
 
 class Dragon(Creature):
     def __init__(self, name, level, scaliness, breaths_fire):
@@ -23,12 +23,13 @@ class Dragon(Creature):
         if self.breaths_fire:
             value = value * 2
 
-        return  value
+        return value
+
 
 class Wizard(Creature):
-    def attack(self, Creature):
+
+    def attack(self, creature):
         my_roll = self.defensive_roll()
         their_roll = creature.defensive_roll()
 
-        return  my_roll >= their_roll
-
+        return my_roll >= their_roll
