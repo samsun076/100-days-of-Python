@@ -1,4 +1,4 @@
-from actors import Creature
+from actors import Creature, Wizard, Dragon
 
 def main():
     print_header()
@@ -10,12 +10,11 @@ def print_header():
     print('----------------------')
     print('     WIZARD GAME')
     print('----------------------')
-    pritn()
+    print()
 
 
 def game_loop():
     creatures = [
-        # TODO: add some creatures
         Creature('Bat', 5),
         Creature('Toad', 1),
         Creature('Tiger', 12),
@@ -24,19 +23,21 @@ def game_loop():
 
     ]
 
-    hero = none # TODO: Create our hero
+    hero = Wizard('Gandalf',75)
+
     while True:
         #randomly choose a creature
-        # active_creature = none
+        
+        active_creature = random.choice(creatures)
 
         print('A {} of level {} has appeared from the dark and foggy forest...'.format(...))
         print()
 
         cmd = input('Do you [a]ttack, [r]unaway, or [l]ook around? ')
         if cmd == 'a':
-            pass
-            #Todo: Attack
-
+            if hero.attack(active.creature):
+                creatures.remove(active_creature)
+                print('The Wizard has been defeated by the powerful{}'.format(active_creature.name))
         elif cmd == 'r':
             print()
         elif cmd == 'l':
