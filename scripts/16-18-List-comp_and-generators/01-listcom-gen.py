@@ -71,8 +71,28 @@ print(stop_word_check())
 new_words = [re.sub(r'\W+', r'', word) for word in potter_words_list]
 
 print(stop_word_check(new_words))
+cnt = Counter(new_words)
+cnt.most_common(5)
 
 
+resp = requests.get('http://projects.bobbelderbos.com/pcc/stopwords.txt')
+full_stop_words = resp.text.lower().split()
+print(full_stop_words[:5])
+
+#traditional for loop
+loop_list=[]
+for word in new_words:
+    if word.strip() and word not in full_stop_words:
+        loop_list.append(word)
+
+print(loop_list)
+
+#comprehension list
+comp_list = [word for word in new_words if word.strip() and word not in full_stop_words]
+print(comp_list)
+
+cnt = Counter(comp_list)
+print(cnt.most_common(10))
 
 
 
